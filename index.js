@@ -21,6 +21,6 @@ async function main() {
 }
 
 http.createServer(function (req, res) {
-  res.write(info);
+  res.write("ibndfo");
   res.end(); 
 }).listen(3000);
