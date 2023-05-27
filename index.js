@@ -4,6 +4,12 @@ var http = require('http');
 
 //create a server object:
 http.createServer(function (req, res) {
+  
+    var admin = new mongoose.mongo.Admin(mongoose.connection.db);
+    admin.buildInfo(function (err, info) {
+       console.log(info.version);
+    });
+  
   res.write('Hello World!'); //write a response to the client
   res.end(); //end the response
 }).listen(3000); //the server object listens on port 8080
